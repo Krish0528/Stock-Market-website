@@ -1,0 +1,32 @@
+/* to override Bootstrap styles for some things */
+
+body {
+background-image: url('https://img.freepik.com/premium-photo/stock-market-forex-trading-graph-graphic-concept_73426-96.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699056000&semt=ais');
+background-size: cover;
+background-color: #687EFF;
+color: white;
+width: 100vw;
+height: 100vh;
+}
+
+a {
+    color: #ffc107;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  color: white;
+  background-color: #FA7070;
+}
+
+.space-above {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+h1{
+margin-top: 20px;
+}

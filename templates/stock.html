@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+      <h1>Stock Details</h1>
+      <form action="/stocks" method="POST">
+        <label for="symbol">Stock Symbol:</label><br>
+        <input type="text" id="symbol" name="symbol"><br>
+        <input type="submit" value="Submit">
+      </form>
+
+    <div class="col-sm-12">
+
+      <table class="table" style="color: white">
+        <tr>
+          <th>Date</th>
+          <th>Stock</th>
+          <th>Open_Price</th>
+          <th>Close_Price</th>
+          <th>High_Price</th>
+          <th>Low_Price</th>
+          <th>Last_Price</th>
+        </tr>
+        <tr>
+          <td>{{ data['date'].split('T')[0] }}</td>
+          <td>{{ data["symbol"] }}</td>
+          <td>{{ data["open"] }}</td>
+          <td>{{ data["close"] }}</td>
+          <td>{{ data["high"] }}</td>
+          <td>{{ data["low"] }}</td>
+          <td>{{ data["last"] }}</td>
+        </tr>
+      </table>
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

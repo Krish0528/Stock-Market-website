@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+      <h2>Stock Details</h2>
+
+{% if success == True: %}
+    <div class="col-sm-12">
+
+      <table class="table" style="color: white">
+        <tr>
+          <th>Date</th>
+          <th>Stock</th>
+          <th>Open_Price</th>
+          <th>Close_Price</th>
+          <th>High_Price</th>
+          <th>Low_Price</th>
+          <th>Last_Price</th>
+        </tr>
+        <tr>
+          <td>{{ data['date'].split('T')[0] }}</td>
+          <td>{{ data["symbol"] }}</td>
+          <td>{{ data["open"] }}</td>
+          <td>{{ data["close"] }}</td>
+          <td>{{ data["high"] }}</td>
+          <td>{{ data["low"] }}</td>
+          <td>{{ data["last"] }}</td>
+        </tr>
+      </table>
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+    </div>
+      {% endif %}
+  </div>
+</div>
+
+{% endblock %}

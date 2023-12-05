@@ -1,0 +1,27 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% block content %}
+
+<main class="form-signin w-100 m-auto">
+    <div class="container">
+        <div class="row">
+          <!-- Adding Flash message here for users trying to register twice -->
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          {% for message in messages %}
+          <p class="flash">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <div class="col-lg-8 col-md-10 mx-auto">
+              <h1>Log In</h1>
+
+            <!--Rendering login form here-->
+        {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+
+          </div>
+        </div>
+        <p><a href="{{ url_for('register') }}">Register</a></p>
+    </div>
+</main>
+{% endblock %}
+

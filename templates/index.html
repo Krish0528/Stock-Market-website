@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Stock Market Info{% endblock %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block content %}
+<div class="jumbotron text-center">
+  <div  class="container">
+    <h1 class="display-4">📈Stock Market Info📉</h1>
+    <p class="lead">You can search for prices of stocks here.</p>
+    <hr class="my-4" />
+    <p>
+      Stocks can be a valuable part of your investment portfolio. Owning stocks in different companies can help you build your savings, protect your money from inflation and taxes, and maximize income from your investments.
+    </p>
+    {% if current_user.is_authenticated: %}
+    <div class="col-lg-8 col-md-10 mx-auto">
+      {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+     </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
